@@ -1,0 +1,28 @@
+extends layouts/main
+
+block content
+    .content.displayBlock
+        <p>Your Korean name is<span>#{name}</span>[#{pronunciation}]</p>
+
+        //- <!-- Go to www.addthis.com/dashboard to customize your tools -->
+        .social__share 
+            <div class="desc__name">Meaning of your name <br></div> 
+            <div class="desc__desc">"#{description}"<br></div>
+            <div class="descrip">(Every Korean name has their own meaning rooted from its Chinese character) </div>
+            //- .addthis_inline_share_toolbox
+            a.discord(href="https://discord.com/invite/nyzTvqK")
+                .icon
+                    i.fab.fa-discord
+                .ment Korean Learning Community (with Ryan)
+            .join__ment Join with your korean-name!
+            
+    .loading-wrap
+        .loading-background
+            .loading
+                .bar
+                .bar
+                .bar
+                .bar
+                .bar
+        span generating Korean power
+        
