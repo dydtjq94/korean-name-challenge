@@ -3553,48 +3553,14 @@ eval("/**\n * Copyright (c) 2014-present, Facebook, Inc.\n *\n * This source cod
 
 /***/ }),
 
-/***/ "./assets/js/home.js":
-/*!***************************!*\
-  !*** ./assets/js/home.js ***!
-  \***************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("var form = document.querySelector(\"#jsBirth\");\nvar gender = document.querySelector(\".switch\");\n\nvar handleSubmit = function handleSubmit(e) {\n  console.dir(e);\n};\n\nfunction init() {\n  form.addEventListener(\"submit\", handleSubmit);\n}\n\nif (form) {\n  init();\n}\n\n//# sourceURL=webpack:///./assets/js/home.js?");
-
-/***/ }),
-
 /***/ "./assets/js/main.js":
 /*!***************************!*\
   !*** ./assets/js/main.js ***!
   \***************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../scss/styles.scss */ \"./assets/scss/styles.scss\");\n/* harmony import */ var _scss_styles_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_styles_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./home */ \"./assets/js/home.js\");\n/* harmony import */ var _home__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_home__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _result__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./result */ \"./assets/js/result.js\");\n/* harmony import */ var _result__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_result__WEBPACK_IMPORTED_MODULE_2__);\n\n\n\n\n//# sourceURL=webpack:///./assets/js/main.js?");
-
-/***/ }),
-
-/***/ "./assets/js/result.js":
-/*!*****************************!*\
-  !*** ./assets/js/result.js ***!
-  \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-eval("var resultContent = document.querySelector(\".content\");\nvar loading = document.querySelector(\".loading-wrap\");\n\nfunction addBlock(e) {\n  e.classList.add(\"displayBlock\");\n}\n\nfunction removeBlock(e) {\n  e.classList.remove(\"displayBlock\");\n}\n\nfunction init() {\n  setTimeout(function () {\n    resultContent.classList.remove(\"displayBlock\");\n  }, 2500);\n  setTimeout(function () {\n    loading.classList.add(\"displayBlock\");\n  }, 2500);\n}\n\nif (resultContent) {\n  init();\n}\n\n//# sourceURL=webpack:///./assets/js/result.js?");
-
-/***/ }),
-
-/***/ "./assets/scss/styles.scss":
-/*!*********************************!*\
-  !*** ./assets/scss/styles.scss ***!
-  \*********************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./assets/scss/styles.scss?");
+eval("\n\n//# sourceURL=webpack:///./assets/js/main.js?");
 
 /***/ }),
 
@@ -3605,7 +3571,7 @@ eval("// removed by extract-text-webpack-plugin\n\n//# sourceURL=webpack:///./as
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("__webpack_require__(/*! @babel/polyfill */\"../node_modules/@babel/polyfill/lib/index.js\");\nmodule.exports = __webpack_require__(/*! /Users/yongsub/Documents/korean-challenge/src/assets/js/main.js */\"./assets/js/main.js\");\n\n\n//# sourceURL=webpack:///multi_@babel/polyfill_./assets/js/main.js?");
+eval("__webpack_require__(/*! @babel/polyfill */\"../node_modules/@babel/polyfill/lib/index.js\");\nmodule.exports = __webpack_require__(/*! /Users/yongsub/Documents/korean-challenge/korean-challenge/src/assets/js/main.js */\"./assets/js/main.js\");\n\n\n//# sourceURL=webpack:///multi_@babel/polyfill_./assets/js/main.js?");
 
 /***/ })
 
