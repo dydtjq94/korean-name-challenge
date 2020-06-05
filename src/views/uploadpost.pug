@@ -1,0 +1,12 @@
+extends layouts/main
+
+block content
+    span postUpload
+    .formContainer
+        .recordContainer#jsRecorderContainer
+            video#jsVideoPreview
+        form(action=routes.post+routes.upload, method="post")
+            input(type="text" name="content" placeholder="c1" required) 
+            input(type="text" name="content" placeholder="c2" required)
+            input(type="text" name="content" placeholder="c3" required)
+            input(type="submit" value="UPLOAD")

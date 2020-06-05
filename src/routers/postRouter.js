@@ -5,14 +5,16 @@ import {
   postDetailCon,
   editPostCon,
   deletePostCon,
-  submitCon,
+  getUploadCon,
   listCon,
+  postUploadCon,
 } from "../controllers/postController";
 
 const postRouter = express.Router();
 
 postRouter.get(routes.home, postCon);
-postRouter.get(routes.submit, submitCon);
+postRouter.get(routes.upload, getUploadCon);
+postRouter.post(routes.upload, postUploadCon);
 
 postRouter.get(routes.list, listCon);
 postRouter.get(routes.postDetail, postDetailCon);

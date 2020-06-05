@@ -13,13 +13,15 @@ const POST = "/post";
 const POST_DETAIL = "/:id";
 const EDIT_POST = "/:id/edit";
 const DELETE_POST = "/:id/delete";
-const SUBMIT = "/submit";
+const UPLOAD = "/upload";
 
 const NATION = "/nation";
 const NATION_DETAIL = "/:id";
 const LIST = "/list";
 
 const RANK = "/rank";
+
+const PROMPT_UPLOAD = "/prompt-upload";
 
 const routes = {
   home: HOME,
@@ -37,7 +39,7 @@ const routes = {
   postDetail: POST_DETAIL,
   editPost: EDIT_POST,
   deletePost: DELETE_POST,
-  submit: SUBMIT,
+  upload: UPLOAD,
 
   nation: NATION,
   nationDetail: NATION_DETAIL,
@@ -45,6 +47,8 @@ const routes = {
   list: LIST,
 
   rank: RANK,
+
+  promptUpload: PROMPT_UPLOAD,
 };
 
 export default routes;

@@ -1,0 +1,12 @@
+extends layouts/main
+
+block content
+    span promptUpload
+    .formContainer
+        .recordContainer#jsRecorderContainer
+            video#jsVideoPreview
+        form(action=`${routes.promptUpload}` method="post")
+            input(type="text" name="prompt" placeholder="Prompt" required) 
+            input(type="text" name="pronunciation" placeholder="Pronunciation" required)
+            input(type="text" name="meaning" placeholder="Meaning" required)
+            input(type="submit" value="UPLOAD")

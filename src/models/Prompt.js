@@ -1,12 +1,10 @@
 import mongoose from "mongoose";
 
 const PromptSchema = new mongoose.Schema({
-  prompt: [
-    {
-      type: String,
-      required: "prompt is required",
-    },
-  ],
+  prompt: {
+    type: String,
+    required: "prompt is required",
+  },
 
   pronunciation: {
     type: String,
