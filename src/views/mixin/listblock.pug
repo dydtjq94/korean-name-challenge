@@ -1,0 +1,5 @@
+mixin listBlock( item = {} )
+    a(href=routes.prompt+routes.promptDetail(item.id))
+        .prompt #{item.prompt}
+        .create #{item.createdAt}
+        .post #{item.post.length}

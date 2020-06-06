@@ -1,0 +1,10 @@
+mixin postBlock( item = {})
+    .postBlock
+        .postInfo
+            each b in today
+                h3.prompt= b
+        .postInfo
+            each a in item.content
+                h3.videoBlockTitle= a
+            
+                

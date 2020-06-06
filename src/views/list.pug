@@ -1,0 +1,14 @@
+extends layouts/main
+include mixin/listBlock
+
+
+block content
+    .list
+        each item in prompt
+            +listBlock({
+                id:item.id,
+                prompt:item.prompt,
+                post:item.post,
+                createdAt:item.createdAt,
+                creator:item.creator
+            })

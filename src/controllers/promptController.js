@@ -22,3 +22,39 @@ export const postPromptUploadCon = async (req, res) => {
   console.log(newPrompt);
   res.redirect(routes.home);
 };
+
+export const promptCon = (req, res) => {
+  console.log(`prompt`);
+};
+
+export const promptDetailCon = async (req, res) => {
+  const {
+    params: { id },
+  } = req;
+  console.log(id);
+  try {
+    const promptId = await Prompt.findById(id).populate(`post`);
+    const posts = promptId.post;
+    const today = promptId.prompt.split("");
+    const pronunciation = promptId.pronunciation;
+    const date = promptId.createdAt;
+    const month = date.getMonth() + 1;
+
+    res.render("postdetail", {
+      pageTitle: `posttitle`,
+      promptId,
+      posts,
+      today,
+      pronunciation,
+      date,
+      month,
+    });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const listCon = async (req, res) => {
+  const prompt = await Prompt.find({}).sort({ _id: -1 });
+  res.render("list", { pageTitle: `promptList`, prompt });
+};

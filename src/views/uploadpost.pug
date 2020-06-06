@@ -5,8 +5,9 @@ block content
     .formContainer
         .recordContainer#jsRecorderContainer
             video#jsVideoPreview
-        form(action=routes.post+routes.upload, method="post")
-            input(type="text" name="content" placeholder="c1" required) 
-            input(type="text" name="content" placeholder="c2" required)
-            input(type="text" name="content" placeholder="c3" required)
-            input(type="submit" value="UPLOAD")
+        form(action=routes.post+routes.upload(prompt.id), method="post")
+            each item in prompt.prompt
+                span #{item}
+                input(type="text" name="content" placeholder=item required) 
+            input(type="submit" value="UPLOAD POST")
+        div.meaning #{prompt.meaning}

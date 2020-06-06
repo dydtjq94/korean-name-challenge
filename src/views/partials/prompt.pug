@@ -2,3 +2,5 @@
     .date #{date.getFullYear().toString().split("")[2]}#{date.getFullYear().toString().split("")[3]}.#{month < 10 ? "0"+month : month}.#{date.getDay() < 10 ? "0"+date.getDay() : date.getDay()}
     .prompt #{today[0]}#{today[1]}#{today[2]}
     .pron [ #{pronunciation} ]
+    a(href=routes.post+routes.upload(promptId.id))
+        button Upload my challenge

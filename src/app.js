@@ -8,6 +8,7 @@ import globalRouter from "./routers/globalRouter";
 import userRouter from "./routers/userRouter";
 import postRouter from "./routers/postRouter";
 import nationRouter from "./routers/nationRouter";
+import promptRouter from "./routers/promptRouter";
 import path from "path";
 
 const app = express();
@@ -45,5 +46,8 @@ app.use(routes.post, postRouter);
 
 // nation-router
 app.use(routes.nation, nationRouter);
+
+// prompt-router
+app.use(routes.prompt, promptRouter);
 
 export default app;

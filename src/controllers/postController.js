@@ -4,15 +4,18 @@ import Prompt from "../models/Prompt";
 
 export const homeCon = async (req, res) => {
   try {
-    const posts = await Post.find({});
-    const prompt = await Prompt.find({}).sort({ _id: -1 });
-    const today = prompt[0].prompt.split("");
-    const pronunciation = prompt[0].pronunciation;
-    const date = prompt[0].createdAt;
+    const prompt = await Prompt.find({}).populate("post").sort({ _id: -1 });
+    const promptId = prompt[0];
+    const posts = promptId.post;
+    const today = promptId.prompt.split("");
+    const pronunciation = promptId.pronunciation;
+    const date = promptId.createdAt;
     const month = date.getMonth() + 1;
+
     res.render("home", {
       pageTitle: "Korean-Word",
       posts,
+      promptId,
       today,
       pronunciation,
       date,
@@ -40,17 +43,37 @@ export const deletePostCon = (req, res) => {
   console.log(`delete post`);
 };
 
-export const getUploadCon = (req, res) => {
-  console.log(`submit`);
-  res.render("uploadpost", { pageTitle: "postUpload" });
+export const getUploadCon = async (req, res) => {
+  const {
+    params: { id },
+  } = req;
+  try {
+    console.log(id);
+    const prompt = await Prompt.findById(id);
+    console.log(prompt);
+
+    res.render("uploadpost", { pageTitle: "postUpload", prompt });
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-export const postUploadCon = (req, res) => {
-  console.log(`submit`);
-  const { body } = req;
-  console.log(body);
-};
+export const postUploadCon = async (req, res) => {
+  const {
+    params: { id },
+    body: { content },
+  } = req;
 
-export const listCon = (req, res) => {
-  console.log(`list`);
+  const prompt = await Prompt.findById(id);
+  console.log(prompt);
+  try {
+    const newPost = await Post.create({
+      content,
+    });
+    prompt.post.push(newPost.id);
+    prompt.save();
+    res.redirect(routes.home);
+  } catch (error) {
+    console.log(error);
+  }
 };

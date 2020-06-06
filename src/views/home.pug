@@ -1,5 +1,18 @@
 extends layouts/main
+include mixin/postBlock
+
 
 block content
     include ./partials/prompt
-    span home
+    .home-posts
+        each item in posts
+            +postBlock({
+                id:item.id,
+                prompt:item.prompt,
+                content:item.content,
+                views:item.views,
+                like:item.like,
+                comments:item.comments,
+                createdAt:item.createdAt,
+                creator:item.creator
+            })

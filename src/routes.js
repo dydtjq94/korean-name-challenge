@@ -13,14 +13,18 @@ const POST = "/post";
 const POST_DETAIL = "/:id";
 const EDIT_POST = "/:id/edit";
 const DELETE_POST = "/:id/delete";
-const UPLOAD = "/upload";
+const UPLOAD = "/:id";
 
 const NATION = "/nation";
 const NATION_DETAIL = "/:id";
-const LIST = "/list";
 
 const RANK = "/rank";
 
+const PROMPT = "/prompt";
+const LIST = "/list";
+const PROMPT_DETAIL = "/:id";
+
+// admin
 const PROMPT_UPLOAD = "/prompt-upload";
 
 const routes = {
@@ -36,10 +40,15 @@ const routes = {
   me: ME,
 
   post: POST,
-  postDetail: POST_DETAIL,
+  postDetail: (id) => {
+    return id ? `/${id}` : POST_DETAIL;
+  },
   editPost: EDIT_POST,
   deletePost: DELETE_POST,
-  upload: UPLOAD,
+
+  upload: (id) => {
+    return id ? `/${id}` : UPLOAD;
+  },
 
   nation: NATION,
   nationDetail: NATION_DETAIL,
@@ -47,6 +56,12 @@ const routes = {
   list: LIST,
 
   rank: RANK,
+
+  prompt: PROMPT,
+
+  promptDetail: (id) => {
+    return id ? `/${id}` : PROMPT_DETAIL;
+  },
 
   promptUpload: PROMPT_UPLOAD,
 };
